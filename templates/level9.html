@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>X Marks the Spot</title>
+    <script>
+        function showHint1() {
+            document.getElementById("hint1").style.display = "block";
+            document.getElementById("hint2-btn").disabled = false;
+            document.getElementById("hint3-btn").disabled = false;
+        }
+
+        function showHint2() {
+            document.getElementById("hint2").style.display = "block";
+        }
+        function showHint3() {
+            document.getElementById("hint3").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>🔍 Clue #9</h1>
+    <p>If Roddy Rich was a Pirate, Where and what would he be looking for </p>
+
+
+    <button onclick="showHint1()">Hint 1</button>
+    <div id="hint1" style="display:none; margin-top:10px;">
+        💡 Hint 1: What is the name of his Most popular song
+    </div>
+
+    <button id="hint2-btn" onclick="showHint2()" disabled>I'm a dumb boy</button>
+    <div id="hint2" style="display:none; margin-top:10px;">
+        💡 Hint 2: What do pirates look for
+    </div>
+
+     <button id="hint3-btn" onclick="showHint3()" disabled>aight bro</button>
+    <div id="hint3" style="display:none; margin-top:10px;">
+        💡 Hint 3: The box... X Marks the spot. The answer is Grape btw
+    </div>
+
+
+
+    <form method="post" style="margin-top:20px;">
+        <input type="text" name="password" placeholder="Enter password">
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">❌ Incorrect password. Try again!</p>
+    {% endif %}
+</body>
+</html>
+
+

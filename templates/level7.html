@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Famous People</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .box {
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 80%;
+            max-width: 600px;
+            background-color: #fff;
+        }
+
+        img {
+            width: 250px;
+            margin-top: 10px;
+            border-radius: 10px;
+            border: 1px solid #aaa;
+        }
+
+        .extra-hint {
+            display: none;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin-top: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            margin-top: 10px;
+            padding: 8px;
+            font-size: 16px;
+            width: 80%;
+        }
+
+        #submit-btn {
+            margin-top: 30px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+        }
+    </style>
+
+    <script>
+        function showExtraHint(id) {
+            document.getElementById(id).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <h1>🔐 Level 7: Find the Secret Word</h1>
+    <form method="POST">
+        <!-- Box 1 -->
+        <div class="box">
+            <h2>Box 1</h2>
+            <p> Instructions: Type names using regular english. <br> If a shorthand name use this example format: M.S. Dhoni</p>
+            <p>Fuhrer's Homie.</p>
+            <input type="text" name="answer1" placeholder="Your answer">
+            <br>
+            <button type="button" onclick="showExtraHint('hint1-img')">Hint</button>
+            <div class="extra-hint" id="hint1-img">
+                <img src="{{ url_for('static', filename='hint1.png') }}" alt="Extra Hint 1">
+            </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="box">
+            <h2>Box 2</h2>
+            <p>March 10th 1957 - May 2nd 2011</p>
+            <input type="text" name="answer2" placeholder="Your answer">
+            <br>
+            <button type="button" onclick="showExtraHint('hint2-img')">Hint</button>
+            <div class="extra-hint" id="hint2-img">
+                <img src="{{ url_for('static', filename='hint2.gif') }}" alt="Extra Hint 2">
+            </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="box">
+            <h2>Box 3</h2>
+            <p>If you want to murder someone and get away with it just be black and use the race card</p>
+            <input type="text" name="answer3" placeholder="Your answer">
+            <br>
+            <button type="button" onclick="showExtraHint('hint3-img')">Hint</button>
+            <div class="extra-hint" id="hint3-img">
+                <img src="{{ url_for('static', filename='hint3.jpg') }}" alt="Extra Hint 3">
+            </div>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="box">
+            <h2>Box 4</h2>
+            <p> Ching Chong. She call me __ the way I lay __</p>
+            <input type="text" name="answer4" placeholder="Your answer">
+            <br>
+            <button type="button" onclick="showExtraHint('hint4-img')">Hint</button>
+            <div class="extra-hint" id="hint4-img">
+                <img src="{{ url_for('static', filename='hint4.png') }}" alt="Extra Hint 4">
+            </div>
+        </div>
+
+        <button type="submit" id="submit-btn">Submit Answers</button>
+    </form>
+</body>
+</html>

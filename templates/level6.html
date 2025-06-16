@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pinkman</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        img {
+            width: 300px;
+            margin: 20px;
+            border: 2px solid #555;
+            border-radius: 12px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 60%;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function revealContent() {
+            document.getElementById("hidden-content").style.display = "block";
+            document.getElementById("reveal-button").style.display = "none";
+        }
+    </script>
+</head>
+<body>
+    <h1>Bonus Level: Bromine and Barium</h1>
+
+    <button id="reveal-button" onclick="revealContent()">Click to Reveal</button>
+
+    <div id="hidden-content" class="hidden">
+        <div>
+             <div style="font-style: serif; font-size: 18px; margin: 20px 0;">
+                 Oh you thought we were done...<br> <br>
+                 The process by which crystal meth is produced starts with the extraction of pseudoephedrine from over-the-counter cold medicines like Sudafed or Claritin-D.
+                 This pseudoephedrine is combined with other ingredients, including lye, hydrochloric acid, and anhydrous ammonia, to create an oily, smelly substance known as meth oil.
+                 This is then heated and cooled multiple times until it crystallizes and becomes crystal methamphetamine. <br> <br> <br>
+                 The production of methamphetamine involves the following steps:<br> <br>
+Precursor chemicals: The synthesis typically begins with precursor chemicals such as pseudoephedrine or ephedrine. These compounds are found in some over-the-counter cold and allergy medications.
+Extraction: The precursor chemicals are extracted from the medications using various methods, such as solvent extraction or acid-base extraction.<br>
+Chemical reactions: The extracted precursor chemicals are then subjected to a series of chemical reactions to convert them into methamphetamine. These reactions often involve the use of reagents and catalysts to facilitate the
+                 desired chemical transformations. Purification: After the synthesis, the crude methamphetamine is purified to remove impurities and byproducts.
+                 Purification techniques may include filtration, recrystallization, or chromatography. <br>
+Conversion to methamphetamine hydrochloride: The final step involves converting the purified methamphetamine into its hydrochloride salt form, which is the active ingredient in Desoxyn. This is typically done by reacting the methamphetamine with hydrochloric acid.
+<div>
+            <img src="{{ url_for('static', filename='image1.png') }}" alt="Image 1">
+            <img src="{{ url_for('static', filename='image2.png') }}" alt="Image 2">
+            <img src="{{ url_for('static', filename='image3.png') }}" alt="Image 3">
+        </div>
+             </div>
+
+                  <img src="{{ url_for('static', filename='image4.png') }}" alt="Image 4" style="width: 1000px; height: auto; margin-top: 20px;">
+</div>
+
+
+
+        <form method="post">
+            <input type="text" name="phrase" placeholder="Type the exact phrase...">
+            <br>
+            <button type="submit">Proceed to Level 7</button>
+        </form>
+
+        {% if error %}
+            <p style="color:red;">❌ Incorrect phrase. Try again exactly as it should be.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

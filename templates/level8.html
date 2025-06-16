@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>WE BRING THE BOOM</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fdf6e3;
+            padding: 50px;
+        }
+
+        video {
+            width: 80%;
+            max-width: 800px;
+            border: 3px solid #444;
+            border-radius: 10px;
+        }
+
+        #next-button {
+            display: none;
+            margin-top: 30px;
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        #next-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎥 Your Reward!</h1>
+    <p>Watch this video before continuing:</p>
+
+    <video id="rewardVideo" controls autoplay onended="showNext()">
+        <source src="{{ url_for('static', filename='prize.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <br>
+    <button id="next-button" onclick="goToLevel9()">Continue to Level 9</button>
+
+    <script>
+        function showNext() {
+            document.getElementById("next-button").style.display = "inline-block";
+        }
+
+        function goToLevel9() {
+            window.location.href = "{{ url_for('level9') }}";
+        }
+    </script>
+</body>
+</html>

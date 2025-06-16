@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Salamanca</title>
+    <script>
+        function showHint1() {
+            document.getElementById("hint1").style.display = "block";
+            document.getElementById("hint2-btn").disabled = false;
+            document.getElementById("hint3-btn").disabled = false;
+        }
+
+        function showHint2() {
+            document.getElementById("hint2").style.display = "block";
+        }
+        function showHint3() {
+            document.getElementById("hint3").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>🔍 For this answer, type it conforming to standard grammar conventions</h1>
+    <p>WW. I mean who do you figure that is? Woodrow Wilson? Willy Wonka? </p>
+
+
+    <button onclick="showHint1()">Hint 1</button>
+    <div id="hint1" style="display:none; margin-top:10px;">
+        💡 Hint 1: You shouldn't need a hint
+    </div>
+
+    <button id="hint2-btn" onclick="showHint2()" disabled>I'm a dumb boy</button>
+    <div id="hint2" style="display:none; margin-top:10px;">
+        💡 Hint 2: This is a quote. From where???
+    </div>
+
+     <button id="hint3-btn" onclick="showHint3()" disabled>aight bro</button>
+    <div id="hint3" style="display:none; margin-top:10px;">
+        💡 Hint 3: It's not Walt Whitman; The other WW.
+    </div>
+
+
+
+    <form method="post" style="margin-top:20px;">
+        <input type="text" name="password" placeholder="Enter password">
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if error %}
+        <p style="color: red;">❌ Incorrect password. Try again!</p>
+    {% endif %}
+
+    {% if success %}
+        <div style="margin-top: 30px;">
+            <p>🎉 Correct! Here's a reward:</p>
+            <div style="font-style: serif; font-size: 18px; margin: 20px 0;">
+            Recipe: Grandma's Homemade Meth <br>
+Ingredients: <br>
+2 teaspoons of Drano drain cleaner<br> 1/2 cup of Sudafed cold medicine<br> 3 tablespoons of Clorox bleach<br> 1/4 cup of red phosphorus (from matchbox striker pads)<br> 1/4 cup of lye (sodium hydroxide)<br>
+                1/2 cup of toluene (from paint thinner)<br> 1/4 cup of anhydrous ammonia (from refrigerant or cleaning solution) <br>
+                1 cup of ephedrine or pseudoephedrine (from cold medicine) <br>
+                1/4 cup of iodine (from antiseptic solution or water purification tablets) <br>
+                <br>
+                Instructions:<br>
+
+Gather all the ingredients and ensure proper ventilation in your work area. Put on protective gloves, goggles, and a mask to avoid contact with harmful chemicals. In a glass or plastic container, combine 2 teaspoons of Drano drain cleaner, 1/2 cup of Sudafed cold medicine, and 3 tablespoons of Clorox bleach. Stir gently to mix. Add 1/4 cup of red phosphorus and 1/4 cup of lye to the mixture. Stir well until the red phosphorus is dissolved. Slowly pour in 1/2 cup of toluene and 1/4 cup of anhydrous ammonia. Stir carefully to avoid splashing. Add 1 cup of ephedrine or pseudoephedrine to the mixture. Stir gently to combine. Finally, add 1/4 cup of iodine to the mixture. Stir well until all the ingredients are fully dissolved and mixed together. The mixture will undergo a series of chemical reactions, producing methamphetamine. Allow it to settle for a few minutes. Carefully transfer the resulting liquid into a glass container, leaving any residue at the bottom of the original container. Cover the container and let it stand for several hours or overnight for the methamphetamine to crystallize. Once the crystals have formed, carefully strain the liquid, and collect the crystals. Dry the crystals thoroughly before use.
+
+        </div>
+            <a href="{{ url_for('level6') }}">
+                <button style="padding: 10px 20px; font-size: 18px;">Go to Level 6</button>
+            </a>
+        </div>
+    {% endif %}
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Osama</title>
+    <script>
+        function showHint1() {
+            document.getElementById("hint1").style.display = "block";
+            document.getElementById("hint2-btn").disabled = false;
+            document.getElementById("hint3-btn").disabled = false;
+        }
+
+        function showHint2() {
+            document.getElementById("hint2").style.display = "block";
+        }
+
+        function showHint3() {
+            document.getElementById("hint3").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+
+    <h1>🔥 Level 4</h1>
+    <p>3 characters. A place. A date or a phone number is all you need</p>
+
+    <button onclick="showHint1()">Hint 1</button>
+    <div id="hint1" style="display:none; margin-top:10px;">
+        💡 Hint 1: Boeing 757-200 AA77
+    </div>
+
+    <button id="hint2-btn" onclick="showHint2()" disabled>I'm a dumb boy</button>
+    <div id="hint2" style="display:none; margin-top:10px;">
+        <img src="{{ url_for('static', filename='hint2.jpg') }}" alt="Hint Image" style="max-width: 80%; border: 2px solid #333; border-radius: 10px;">
+    </div>
+
+    <button id="hint3-btn" onclick="showHint3()" disabled>aight bro</button>
+    <div id="hint3" style="display:none; margin-top:10px;">
+        💡 Hint 3: This is a location. It is 3 words, use the first 3 letters (new york city --> NYC)
+    </div>
+
+    {% if not success %}
+        <form method="post" style="margin-top:20px;">
+            <input type="text" name="password" placeholder="Enter password">
+            <button type="submit">Submit</button>
+        </form>
+    {% endif %}
+
+    {% if error %}
+        <p style="color: red;">❌ Incorrect password. Try again!</p>
+    {% endif %}
+
+    {% if success %}
+        <div style="margin-top: 30px;">
+            <p>🎉 Correct! Here's a reward:</p>
+            <img src="{{ url_for('static', filename='congrats.png') }}" alt="Congrats!" style="max-width: 70%; border: 2px solid green; border-radius: 12px; margin-bottom: 20px;">
+            <br>
+            <a href="{{ url_for('level5') }}">
+                <button style="padding: 10px 20px; font-size: 18px;">Go to Level 5</button>
+            </a>
+        </div>
+    {% endif %}
+
+</body>
+</html>
