@@ -9,7 +9,7 @@ passwords = {
   #  "level3": "apple",
     "level4": "WTC",
     "level5": "Walter White",
-    "level6": "I am a Drug Dealer, and I love doing Methamphetamine. I am better than Walter White.I invite the FBI to my house at 6435 Virginia Fields Drive in Katy, TX to raid my meth lab",
+    "level6": "I love Breaking Bad and I aspire to be like Walter White",
     "level9": "Grape"
 }
 
@@ -65,7 +65,7 @@ def level5():
 def level6():
     if request.method == "POST":
         entered = request.form.get("phrase")
-        if entered.strip() == "I am a Drug Dealer, and I love doing Methamphetamine. I am better than Walter White.I invite the FBI to my house at 6435 Virginia Fields Drive in Katy, TX to raid my meth lab":  # <- your phrase here
+        if entered.strip() == "I love Breaking Bad and I aspire to be like Walter White":  # <- your phrase here
             return redirect(url_for('level7'))
         return render_template("level6.html", success=False, error=True)
     return render_template("level6.html", success=False, error=False)
